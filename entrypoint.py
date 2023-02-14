@@ -63,7 +63,7 @@ while not (status := get_status(job_name, build_number)):
     time.sleep(1)
 
 print(f"Job status is : {status}")
-print(f"::set-output name=job_status::{status}")
+print(f"job_status={status} >> $GITHUB_OUTPUT")
 
 if status != 'SUCCESS':
     exit(1)
